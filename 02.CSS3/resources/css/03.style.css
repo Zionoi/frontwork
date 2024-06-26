@@ -1,0 +1,135 @@
+/* css는 이게 주석임*/
+/*================================ 1. 속성 선택자 =================================*/
+
+/* div요소들 중 name속성값이 name1과 "일치"하는 요소를 선택해서 스타일 추가해보자 */
+div[name=name1] {
+    background-color: orange;
+}
+
+/* div요소들 중 name속성값이 name1이 "포함"하는(공백으로 구분, 단어단위로) 요소를 선택해서 스타일 추가해보자 */
+div[name~=name1]{ /*속성값 공백으로 구분됨*/
+    color: rgb(255, 0, 0);
+} 
+div[class~=class]{ /*속성값 공백으로 구분됨*/
+    color: rgb(255, 0, 0);
+} 
+
+/*div요소들 중 class의 속성값이 class로 "시작" 하는 요소*/
+div[class^=class]{
+    background-color: aquamarine;
+}
+
+/*div요소들 중 class의 속성값이 class로 "시작" 하는 단어인 요소 (단어단위로 - 대쉬로 구분*/
+div[class|=class]{
+    color: rgb(143, 106, 230);
+}
+
+/*div요소들 중 class의 속성값이 ss로 "끝"나는 요소*/
+div[class$=ss]{
+    font-size: 20px;
+}
+
+/* div요소들 중 class속성값이 i가 "포함"하는 요소 */
+div[class*=i]{
+    border : 15px dotted;
+}
+
+
+/*응용 : class속성값이 div-class인 요소들 중에서 name속성값이 name3이 포함되어 있는 요소 스타일 적용 (배경컬러 넣기)*/
+/* div[class=div-class][name~=name3]{
+    background-color: rgb(145, 243, 145);
+}
+ */
+
+.div-class[name*=name3]{
+    background-color: pink;
+}
+
+
+/*================================ 2. 자손 선택자 =================================*/
+/* id가 test1인 요소의 자손들 중 h4요소만 선택*/
+#test1>h4{
+    background-color: orange;
+}
+/* ul의 자손요소들 선택 */
+#test1>ul>li{
+    background-color: pink;
+}
+
+/* id가 test1인 요소의 후손들중 li 요소 선택 */
+#test1 li{
+    color: brown;
+}
+
+
+
+/*================================ 3. 동위 선택자 =================================*/
+/* id가 test2인 div의 형제들중에 바로뒤에나오는 div 요소 하나만 선택 */
+#test2+div {
+    background-color: aqua;
+}
+#test2+ul { /* 선택 안됨(바로 뒤의 요소가 아니기 때문)*/
+    background-color: aqua;
+}
+
+/* id가 test2인 형제들 중 ul 요소들 모두 선택*/
+#test2~ul {
+    color: rgb(248, 0, 0);
+}
+
+/*================================ 4. 반응 선택자 =================================*/
+.area{
+    width: 100px;
+    height: 100px;
+    background-color: chartreuse;
+}
+#active-test:hover {
+    background-color: rgb(89, 0, 255);
+    color: aliceblue;
+}
+#active-test:active {
+    background-color: crimson;
+    color: aliceblue;
+}
+
+#hover-test:hover{
+    background-color: crimson;
+    color: azure;
+}
+
+
+/*================================ 5. 상태 선택자 =================================*/
+input[type=checkbox]:checked{
+    width: 30px;
+    height: 30px;
+}
+
+/*체크박스가 선택되면 글자도 커지게 스타일지정*/
+input[type=checkbox]:checked+label{
+    font-size: 30px;
+}
+
+
+input+input[name^=user]:focus{
+    background-color: pink;
+}
+
+
+button:enabled{
+    background-color: bisque;
+}
+button:disabled{
+    background-color: gray;
+    color: black;
+}
+
+
+
+
+
+
+
+
+
+
+
