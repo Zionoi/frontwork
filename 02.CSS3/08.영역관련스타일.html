@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>영영관련스타일</title>
+    <style>
+        .test{
+            width: 100px;
+            height: 100px;
+            background-color: lightcyan;
+            border: 10px solid rgb(106, 106, 230);
+        }
+
+
+    </style>
+</head>
+<body>
+    <h1>여백 및 간격 관련 스타일</h1>
+
+    <h2>요소선택 == content(내용) + padding(안쪽여백) + border(테두리)</h2>
+
+<h4>div</h4>
+<div class="test">기준 div</div>
+
+<h3>padding(안쪽여백)</h3>
+<p>
+    내용물 영역(content)과 테두리 영역(border)사이의 거리(여백)을 조절하는 스타일
+</p>
+<div class="test" id="test1">컨텐츠영역</div><br>
+<div class="test" id="test2">컨텐츠영역</div><br>
+<div class="test" id="test3">컨텐츠영역</div><br>
+<!--------------------------------------- style ------------------------------------------------>
+        <style>
+            #test1{
+                padding: 100px; /* 상하좌우 모든여백 100px*/
+            }
+            #test2{
+                padding-top:100px;
+                padding-right:20px;
+                padding-bottom:30px;
+                padding-left: 10px;
+                
+            }
+            #test3{
+                /*앞 : 위아래 값, 뒤: 양 옆 값*/
+                /* padding : 입력값 3개면 입력 값 차례대로 위부터 시계방향 순서대로 입력값 뜻함 가운데는 -값이면 왼쪽*/
+                padding: 60px 50px; /* 위, 아래:20px | 좌,우: 50px
+                padding: 20px 50px 100px; /*위, 좌우, 아래*/
+                padding: 100px 20px 30px 10px;/*위에ㅓ부터 시계방향으로*/
+            }
+
+        </style>
+
+
+<h3>margin</h3>
+<p>
+    요소들 간의 간격을 조정할 때 사용
+</p>
+<div class="test" id="test4">컨텐츠영역</div>
+<div class="test" id="test5">컨텐츠영역</div>
+<div class="test" id="test6">컨텐츠영역</div>
+<!--------------------------------------- style ------------------------------------------------>
+
+    <style>
+        #test4{
+            margin: 50px;
+        }
+        #test5{
+            margin-top: 30px;
+            margin-bottom: 50px;
+            margin-left: 10px;
+        }
+        #test6{
+            margin: 30px 50px 80px 10px;
+            margin: auto; /*좌우 기준으로 창의 가운데 배치 */
+        }
+    </style>
+
+<br>
+
+
+
+
+    </body>
+</html>

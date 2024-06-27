@@ -1,0 +1,82 @@
+/*==============1. color ====================================================*/
+#c{
+    color: red; /*색상명*/
+    color: #00ff00; /*16진수*/
+    color: rgb(0, 5, 167); /*rgb*/
+    color: rgba(201,0,167,0.02);
+    color: hsl(240,100%,50%); /*h:색상값(0~360), s:채도(%), l: 명도(%)*/
+    color: hsla(240,100%,50%, 0.5);
+}
+/*==============2. text-decoration ====================================================*/
+
+
+#td1{text-decoration: overline;}
+#td2{text-decoration: line-through;}
+#td3{text-decoration: underline;}
+#td4{text-decoration: none;}
+
+
+/*==============3. text-transform ====================================================*/
+
+#tt1{text-transform: uppercase;}
+#tt2{text-transform: lowercase;}
+#tt3{text-transform: capitalize;}
+
+
+/*==============4. text-shadow ====================================================*/
+.shadow{
+    font-size: 50px;
+    font-weight: 900;
+}
+#ts1{
+    color:red;
+    text-shadow: 5px 5px 5px black;
+    text-shadow: -5px -5px 5px rgb(245, 141, 141);
+}
+
+
+#ts2 {
+    color :rgb(255, 255, 255);
+    text-shadow: 0px 0px 11px black;
+    text-shadow: 0 0 11px hotpink;
+}
+
+#ts3{
+    color: white;
+    text-shadow: 0 0 4px gray, 
+                 0 -5px 4px yellow,
+                 0 -10px 8px orange,
+                 0 -15px 15px orangered,
+                 0 -20px 20px red;
+}
+
+/*==============5. text-align ====================================================*/
+#justify{text-align:justify;}
+#right{text-align:right;}
+#center{text-align:center;}
+
+
+/*==============6. line-height ====================================================*/
+
+#lh1{
+    line-height: 3px;
+}
+
+#lh2{
+    line-height: 0.5rem;
+}
+#lh3{
+    line-height: 15%;
+}
+
+#test{
+    width: 200px;
+    height: 200px;
+    background-color: lightcoral;
+    text-align: center;
+    line-height: 200px;
+}
+
+
+
+

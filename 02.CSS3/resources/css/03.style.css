@@ -96,7 +96,11 @@ div[class*=i]{
     background-color: crimson;
     color: azure;
 }
-
+a#link:link {color: crimson;}
+#link:visited {color: dimgray;}
+#link:hover{color: blue}
+#link:active{background-color: black;
+                color:rgb(255, 251, 0);}
 
 /*================================ 5. 상태 선택자 =================================*/
 input[type=checkbox]:checked{
@@ -123,11 +127,48 @@ button:disabled{
     color: black;
 }
 
+/*================================ 6. 일반 구조 선택자 =================================*/
+div#summer>:first-child{/* summer>: => 자손들 / summer : => 후손들*/
+    background-color: lightcoral;
+}
+#summer :last-child{
+    background-color: lightblue;
+}
+#summer :nth-child(2){
+    background-color: lightyellow;
+}
+#summer :nth-child(2n){ /*2n => 짝수번째만 선택*/
+    color: chocolate;
+}
+#summer :nth-child(2n+1){ /*2n+1 => 홀수번째만 선택*/
+    color: blueviolet;
+}
 
+/*================================ 7. 형태 구조 선택자 =================================*/
+#fall p:first-of-type {
+    background-color: lightgray;
+}
+/*#fall p:first-child {             => id가fall인 선택자 자손의 첫번째 자손이 p가 아니라 div이므로 p:first-child를 쓰면 먹히지 않음
+    background-color: lightgray;        first-child : 첫번째가 중요 태그는 중요치않음
+}*/
 
+#fall p:last-of-type {
+    background-color: lightcyan;
+}
+#fall p:nth-of-type(3){
+    background-color: lightgreen;
+}
+#fall p:nth-of-type(2n){
+    color: violet;
+}
+#fall p:nth-of-type(2n+1){
+    color: brown;
+}
 
-
-
+/*================================ 8. 부정 선택자 =================================*/
+#winter :not(p:first-child){
+    color: blue;
+}
 
 
 
