@@ -4,9 +4,35 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>식단표</title>
+    <style>
+        table{
+            border: 2px solid;
+            border-collapse: collapse;
+            box-shadow: 7px 7px 3px gray;
+            font-family: 고딕체;
+            font-size: 16px;
+            width: 600px;
+            height: 100px;
+        }
+        
+        td{
+            border: 3px dotted rgb(243, 169, 169);
+            background-color: rgb(252, 237, 237);
+        }
+        caption{
+            margin: 6px;
+            border: 3px solid;
+        }
+        th{
+            font-size: large;
+            border: 2px solid;
+            border-bottom: 6px double;
+        }
+    </style>
+
 </head>
 <body>
-    <table border="1">
+    <table >
         <caption><b>김요한 식단표</b></caption>
         <thead>
             <tr>
@@ -15,8 +41,8 @@
                 <th>수</th>
                 <th>목</th>
                 <th>금</th>
-                <th>토</th>
-                <th>일</th>
+                <th style="background-color: lightblue;">토</th>
+                <th style="background-color: rgb(247, 138, 138);">일</th>
 
             </tr>
         </thead> 

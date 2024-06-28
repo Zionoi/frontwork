@@ -1,0 +1,55 @@
+body {
+    background-color: rgb(119, 0, 0);
+    /* background-color: rgba(170, 0, 0, 0.3); */
+    color: rgb(247, 238, 238);
+}
+#div-bg{
+    background-color: rgb(124, 47, 47);
+    padding: 20px;
+    border: 1px solid rgb(49, 85, 86);
+    width: 50%;
+}
+.div-test {
+    margin: 30px;
+    background-color: rgb(104, 30, 1);
+    border: 10px dashed;
+    padding: 20px;
+}
+#div1{
+    background-clip: border-box;    /*배경을 라인바깥쪽으로 잡음*/
+}
+#div2{
+    background-clip: padding-box;   /*배경을 라인 안쪽으로 잡음*/
+}
+#div3{
+    background-clip: content-box;   /*배경을 내용까지만 잡음*/
+}
+
+#bg-img{
+    border: 1px solid;
+    width: 100%;
+    height: 800px;
+
+    background-image:url("../img/작은오리.jpg");
+     background-repeat: no-repeat;
+    /* background-repeat: repeat-x;
+    background-repeat: repeat-y; */
+    background-size: auto; /* 기본값 원래 이미지 사이즈*/
+    background-size: contain; /*해당 요서안에 이미지가 모두 보이게*/
+    background-size: cover; /*해당 요소안에 이미지가 가득 차게*/
+    background-size: 300px; /*가로길이(세로는 원래이미지의 비율에 맞춰서 자동으로 조절됨)*/
+    background-size: 300px 300px; /* 가로길이 세로길이 */
+    background-size: 30%;
+    background-size: 50% 50%;
+    background-size: auto;
+
+    background-position: left top; /* 기본값 */
+    background-position: center bottom;
+    background-position: center center;
+    background-position: 20% 30%;
+    background-position: 50% 50%;
+
+    background-attachment: scroll; /*기본값*/
+    background-attachment: fixed;   /*이미지 고정*/
+}
+
