@@ -1,0 +1,93 @@
+header{
+    width: 1000px;
+    height: 100px;
+    background-color: rgb(255, 255, 216);
+}
+header> .header-text {
+    color: rgb(141, 0, 0);
+    line-height: 100px;
+    font-size: 3em;
+}
+
+section{
+    width: 1000px;
+}
+#menu-container {
+    width: 800px;
+    display: flex; /* Flexbox 레이아웃 사용 */
+    flex-wrap: wrap; /* 아이템이 줄을 넘어가면 다음 줄에 배치 */
+}
+.menu-item{
+    width: 166px;
+    height: 156px;
+    float: left;
+    border: 2px solid black;
+    color: rgb(255, 255, 255, 0.6);
+    text-align: center;
+    line-height: 60px;
+    font-size: 2.5em;
+    text-shadow: 0px 0px 1cap rgb(92, 91, 82);
+}
+#menu1{
+    background: url("../img/웃음.webp") no-repeat center;
+    background-size: cover; /* 배경 이미지를 div 크기에 맞게 조절 */
+    background-position: center; /* 배경 이미지를 중앙에 위치 */
+}
+#menu2{
+    background: url("../img/놀람.webp") no-repeat center;
+    background-size: cover; /* 배경 이미지를 div 크기에 맞게 조절 */
+    background-position: center; /* 배경 이미지를 중앙에 위치 */
+}
+#menu3{
+    background: url("../img/무서움.jpg") no-repeat center;
+      background-size: cover; /* 배경 이미지를 div 크기에 맞게 조절 */
+            background-position: center; /* 배경 이미지를 중앙에 위치 */
+}
+#menu4{
+    background: url("../img/비열함.png") no-repeat center;
+      background-size: cover; /* 배경 이미지를 div 크기에 맞게 조절 */
+            background-position: center; /* 배경 이미지를 중앙에 위치 */
+}
+#menu5{
+    background: url("../img/슬픔.webp") no-repeat center;
+      background-size: cover; /* 배경 이미지를 div 크기에 맞게 조절 */
+            background-position: center; /* 배경 이미지를 중앙에 위치 */
+}
+#menu6{
+    background: url("../img/자신감충만.jpg") no-repeat center;
+      background-size: cover; /* 배경 이미지를 div 크기에 맞게 조절 */
+            background-position: center; /* 배경 이미지를 중앙에 위치 */
+}
+#menu7{
+    background: url("../img/지루함.webp") no-repeat center;
+      background-size: cover; /* 배경 이미지를 div 크기에 맞게 조절 */
+            background-position: center; /* 배경 이미지를 중앙에 위치 */
+}
+#menu8{
+    background: url("../img/피곤함.webp") no-repeat center;
+      background-size: cover; /* 배경 이미지를 div 크기에 맞게 조절 */
+            background-position: center; /* 배경 이미지를 중앙에 위치 */
+}
+#menu9{
+    background: url("../img/화남.webp") no-repeat center;
+      background-size: cover; /* 배경 이미지를 div 크기에 맞게 조절 */
+            background-position: center; /* 배경 이미지를 중앙에 위치 */
+}
+#menu10{
+    background: url("../img/궁금함.jpg") no-repeat center;
+      background-size: cover; /* 배경 이미지를 div 크기에 맞게 조절 */
+            background-position: center; /* 배경 이미지를 중앙에 위치 */
+}
+
+#right-side{
+    width: 190px;
+    background-color: aquamarine;
+    width: 200px; /* 너비 조정 */
+    background-color: aquamarine;
+    text-align: center; /* 텍스트 가운데 정렬 */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+}
+

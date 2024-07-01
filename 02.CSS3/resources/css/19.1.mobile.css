@@ -1,0 +1,25 @@
+/*전체*/
+#wrapper{
+    background-color: rgb(252, 130, 130);
+    width: 100%;
+}
+/*header*/
+header{
+    height: 60px;
+    line-height: 60px;
+}
+
+/*본문*/
+section{
+    height: 300px;
+    background-color: rgb(255, 182, 182);
+}
+
+/*aside*/
+aside{
+    background-color: rgb(255, 182, 182);
+}
+
+footer{
+    height: 50px;
+}
