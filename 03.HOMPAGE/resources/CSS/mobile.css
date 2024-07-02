@@ -1,0 +1,86 @@
+/*전체*/
+body{
+    width: 600px;
+    margin: 0 auto;
+    /* border:1px solid; */
+}
+
+/*header*/
+header{
+    text-align: center;
+    height: 350px;
+    margin-bottom: 10px;
+}
+#logo{
+    /* float: left;  */
+    /* padding-left: 40%; */
+    height: 40px; 
+    margin: 5px 0;
+}
+
+    header>form{
+    /* float: right;  */
+    /* padding-left: 30%; */
+    margin-top: 11px;
+}
+#logo{margin-top: 5px;}
+#login{margin: 5px;}
+#titleImg{
+    /* display:none; */
+    clear: both;
+    height: 270px;
+    width: 100%;
+    /* background-position: center;
+    background-size: cover;*/
+} 
+
+/* nav */
+.navi {
+    background-color: rgb(9, 11, 24);
+    width: 600px;
+    height: 204px;
+}
+.navi a {
+    display: block;
+    flex-wrap: wrap;
+    border-bottom: 1px solid rgb(80, 79, 79);
+    height: 50px;
+    width: 600px;
+    line-height: 50px;
+    text-align: center;
+    /* font-weight: bold; */
+    font-size: 1.5em;
+    color: rgb(255, 255, 255);
+}
+.navi a:link, .navi a:visited {color:rgb(255, 255, 255)}
+.navi a:hover {color:yellow; text-shadow: 2px 2px 2px rgb(124, 124, 124);}
+.navi a:active {color : rgb(59, 0, 0)}
+
+/*본문*/
+section {
+    /* float: left; */
+    width: 100%;
+    font-size: 18px;
+    text-align: center;
+    /* padding-left: 100px; */
+
+
+}
+/*aside*/
+aside{
+    /* float:right; */
+    width: 100%;
+}
+
+aside img{
+    width: 31%;
+
+    margin: 4px;
+}
+
+/*footer*/
+footer{
+    clear: both;
+    font-size: small;
+    border-top: 1px solid;
+}
