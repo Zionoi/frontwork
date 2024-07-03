@@ -49,14 +49,14 @@
     <fieldset id="fi" style="flex-direction: column;">
         <legend>practice</legend>
         <input type="range" id="p1" name="p1" min="0" max="255" value="0" 
-                oninput="color();">
+                oninput="color(); document.getElementById('p11').innerHTML=this.value;">
                 <span id="p11">0</span>
         <input type="range" id="p2" name="p2" min="0" max="255" value="0" 
-                oninput="color();">
+                oninput="color(); document.getElementById('p22').innerHTML=this.value;">
                 <span id="p22">0</span>
         <input type="range" id="p3" name="p3" min="0" max="255" value="0" 
-                oninput="color()">
-                <span id="p3">0</span>
+                oninput="color(); document.getElementById('p33').innerHTML=this.value">
+                <span id="p33">0</span>
         
     </fieldset>
     <script>
@@ -70,26 +70,33 @@
             
         }
     </script>
-
+    
 
     <br><br>
 
-    <div class="area" id="area2" style="background-color: rgb(1, 1, 1)"></div>
-    <button onclick="changeColor();">클릭할 때 색 변경</button>
+    <div class="area" id="area2"></div>
+    <button onclick="changeColor();">클릭할 때마다 점점 밝은색으로 변경</button>
     <script>
-        function changeColor(){
+        var r = 0, g = 0, b = 0; // 초기 색상 (검은색)
+
+        function changeColor() {
             var cc = document.getElementById("area2");
-            console.dir(cc);
+
             
-            if(cc.style.backgroundColor != "rgb(0,0,0)"){
-                cc.style.backgroundColor ="rgb("+a+","+b+","+c+")";
-                a+=10;
-                b+=10;
-                c+=10;
-            }else{
-                cc.style.backgroundColor = "rgb(0,0,0)";
-                    }
-            
+            r = Math.min(r + 80, 255);
+            g = Math.min(g + 30, 255);
+            b = Math.min(b + 50, 255);
+
+            // Math.min(변수 식, 제한값): 변수에 설정한 수식만큼 값을 변화시키고 , 최대 제한값을 넘기지 않게끔 하는 함수
+
+            // 최대 밝기에 도달하면 다시 검은색으로 초기화
+            if (r === 255 && g === 255 && b === 255) {
+                r = 0;
+                g = 0;
+                b = 0;
+            }
+
+            cc.style.backgroundColor = "rgb(" + r + "," + g + "," + b + ")";
         }
     </script>
 
@@ -163,11 +170,94 @@
                 }
             }
         </script>
+ 
 
+    <h3>4) 클래스를 이용하여 요소 가져오기</h3>
+    <div class="test"></div>
+    <p class="test"></p>
+    <ul class="test">
+        <li></li>
+        <li></li>
+    </ul>
+    <pre class="test test1"></pre>
 
+    <button onclick="accessClass();">class로 접근</button>
 
+    <script>
+        function accessClass() {
+            // class속성으로 요소 가져오 때
+            // document.getElementsByClassName("class속성값") => 선택된 요소들을 배열에 담아서 반환
+            var arr = document.getElementsByClassName("test");
+            console.log(arr);
 
+            for(var i=0; i<arr.length; i++){
+                console.log(arr[i]);
+            }
+        }
+    </script>
 
+    <h3>5) 내가 원하는 요소를 자유자재로 가져오기(선택자 활용)</h3>
+
+    <div id="test2">테스트입니다</div>
+    <div class="test2">
+        <h2>안녕</h2>
+        <h2>좋은아침</h2>
+    </div>
+    <span>ㅎㅎㅎ</span>
+
+    <button onclick="accessSelector();">클릭</button>
+
+    <script>
+        function accessSelector(){
+            // 선택자를 이용하여 요소를 가져오고자 할 때
+            // document.querySelector("선택자") => 선택된 첫번째 요소 객체 하나만 반환
+            // document.querySelectorAll("선택자") => 선택된 요소객체들을 배열에 담아서 반환
+
+            var divE1 = document.querySelector("#test2")
+            var h2E1 = document.querySelector(".test2>h2");
+            console.log(h2E1);
+            var spanE1 = document.querySelector(".test2+span");
+            console.log(spanE1);
+            var h2E2 = document.querySelectorAll(".test2>h2");
+            console.log(h2E2);
+            for(var i=0;i<h2E2.length;i++){
+                console.log(h2E2[i]);
+            }
+        }
+    </script>
+
+    <br>
+
+    <div>
+        <p class="cls1">
+            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Esse animi minima in recusandae vel dignissimos sit soluta odio. Excepturi possimus ipsam eligendi sequi! Omnis perferendis ratione laborum delectus mollitia illo.
+        </p>
+        <p class="cls2">
+            Labore ipsum at aliquam quae dicta natus incidunt enim sunt totam vitae, laborum asperiores aspernatur placeat laboriosam mollitia tempora esse, maxime quos nulla eum nostrum, adipisci possimus. Nesciunt, possimus sit.
+        </p>
+        <p class="cls1">
+            Blanditiis culpa neque laboriosam aspernatur, porro, inventore deserunt vero pariatur dignissimos natus fugiat consequatur aperiam doloremque possimus molestias, consectetur fugit numquam debitis quibusdam molestiae deleniti exercitationem maiores? Asperiores, atque laudantium.
+        </p>
+    </div>
+
+    <button onclick="select();">querySelector</button>
+    <button onclick="selectAll();">querySelectorAll</button>
+
+    <script>
+        function select(){
+            var p2 = document.querySelector(".cls2");
+            p2.style.color = "hotpink"
+        }
+        function selectAll(){
+            var p = document.querySelectorAll(".cls1");
+
+            // p.style.color = "lightblue"; => 그냥 이렇게하면 오류. 배열상태라 인덱스로 지정해줘야함
+            
+            for(var i=0;i<p.length;i++){
+                p[i].style.color = 'lightblue';
+            }
+        }
+    </script>
     
 
 
