@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>회원가입</title>
+    <style>
+        table{
+            border: 1px solid;
+            text-align: left;
+            align-items: center;
+        }
+        .area {
+            border: 1px solid;
+            /* padding-left: 80px; */
+            
+            
+        }
+        .inp {
+            /* margin-left: 100px; */
+            
+        }
+        .btn{
+            width: 100px;
+            
+        }
+    </style>
+</head>
+<body>  
+    <h1 style="text-align: center;">회원가입</h1>
+    <div class="area" style="width: 100%;">
+        <table>
+            <tr> 
+                <td>* 아이디 :</td>
+                <td><input type="text" class="inp" ></td>
+            </tr>    
+            <tr><td>첫글자는 반드시 영문자하고 영문자, 숫자 포함 총 4~12자로 입력하시오.</td></tr>
+            <tr>
+                <td>* 비밀번호</td> 
+                <td><input type="password" class="inp"></td>
+            <tr><td>영문자, 숫자, 특수문자로 총 8~15자로 입력하시오.</td></tr>
+            </tr>
+
+            <tr>
+                <td>* 비밀번호 확인 : </td>
+                <td><input type="password" class="inp"></td>
+            
+            </tr>
+            <tr>
+                <td>위의 비밀번호와 일치하게 입력하시오.</td>
+            </tr>
+            <tr>
+                <td>* 이름 : </td> 
+                <td><input type="text" class="inp"></td>
+            </tr>
+            <tr>
+                <td>한글로만 이루어져 있어야 되며 2글자 이상으로 입력하시오.</td>
+            </tr>
+            <tr>
+                <td>* 이메일 : </td>
+                <td><input type="text" class="inp"></td>
+            </tr>
+            <tr>
+                <td>이메일 형식에 맞춰 입력하시오.</td>
+            </tr>
+            <tr>
+                <td>* 취미 : </td>
+                <td><input type="text" class="inp"></td>
+            </tr>
+            <tr>
+                <td>* 거주지 : </td>
+                <td><select name="adress" id="adress" style="width: 100px;">
+                        <option value="서울"> 서울 </option>
+                        <option value="광주"> 광주 </option>
+                        <option value="부산"> 부산 </option>
+                </select></td>
+            </tr>
+            <tr>
+                <hr>
+            </tr>
+            <tr>
+                <td><button class="btn">회원가입</button></td> 
+                <td><button class="btn">취소</button></td>
+                
+            </tr>
+    </table>
+            
+
+
+    </div>
+</body>
+</html>
