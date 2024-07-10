@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ex게시판리스트</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+</head>
+<body>
+    <h1>게시판 리스트</h1>
+    <table id="area1" border="1">
+        <thead>
+            <tr>
+                <th>글번호</th>
+                <th>제목</th>
+                <th>작성자</th>
+                <th>조회수</th>
+                <th>작성일</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- 게시글 데이터는 JavaScript에서 추가됩니다 -->
+        </tbody>
+    </table>
+    <div id="div1"></div>
+    
+    <script>
+        $(document).ready(function(){
+            const board = [
+                {num: 3, title: '세번째 글 제목', author: 'user01', viewCount: 23, date: '2023-03-31'},
+                {num: 2, title: '두번째 글 제목', author: 'user02', viewCount: 15, date: '2023-03-13'},
+                {num: 1, title: '첫번째 글 제목', author: 'admin', viewCount: 75, date: '2023-03-12'}
+            ];
+
+            let result = '';    
+            $(board).each(function(index, obj){
+                result += `<tr id="row-${obj.num}">
+                                <td>${obj.num}</td>
+                                <td>${obj.title}</td>
+                                <td>${obj.author}</td>
+                                <td>${obj.viewCount}</td>
+                                <td>${obj.date}</td>
+                            </tr>`;
+            });
+            $('#area1 tbody').html(result);
+
+            // 각 행에 클릭 이벤트 추가
+            $('tr[id^="row-"]').click(function(){
+                const id = $(this).attr('id').split('-')[1];
+                const selectedBoard = board.find(item => item.num == id);
+                $('#div1').html(`
+                    선택된 게시글 정보 ${selectedBoard.num} / ${selectedBoard.title} / ${selectedBoard.author} / ${selectedBoard.viewCount} / ${selectedBoard.date}</p>
+                `);
+            });
+        });
+    </script>
+</body>
+</html>
