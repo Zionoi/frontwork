@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FadeIn FadeOut</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.13.3/jquery-ui.js"></script>
+    <style>
+        img{
+            width: 500px;
+            height: 400px;
+        }
+    </style>
+</head>
+<body>
+    <h1>* fadeIn() fadeOut(), fadeToggle()</h1>
+    <p>
+        선택된 요소가 점점 투명해지면서 사라지고 점점 선명해지면서 보여지게 하는 메소드
+    </p>
+
+    
+    
+    <button id="fadeout">Fadeout</button>
+    <button id="fadein">FadeIn</button>
+    <button id="fadetoggle">FadeToggle</button>
+    <img src="../01.html5/resources/img/istockphoto-468900564-2048x2048.jpg" alt="" id="img1"> 
+
+    <div id="content">
+        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Aliquam quod doloribus, nobis tenetur sint facere sit veniam accusantium rem saepe molestias similique distinctio, ipsa expedita. Quasi reprehenderit placeat beatae delectus!
+        Quos animi, similique dolorum voluptate ratione eveniet. Qui vel illo quos nam, vero debitis nulla accusamus at soluta necessitatibus explicabo sed repellendus incidunt sit dolor? Officia laborum voluptatibus magni laudantium.
+    </div>
+    
+    <script>
+        $(()=>{
+            $('#fadeout').click(function(){
+                $('#img1').fadeOut(1000);
+            })
+            $('#fadein').click(function(){
+                $('#img1').fadeIn(1000);
+            })
+            $('#fadetoggle').click(function(){
+                $('#img1').fadeToggle(1000);
+            })
+        })
+    </script>
+</body>
+</html>

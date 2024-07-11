@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>slideDown slideUp</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.13.3/jquery-ui.js"></script>
+    <style>
+        /* img{
+            width: 500px;
+            height: 400px;
+        } */
+        div{
+            background-color: beige;
+            border: 1px solid;
+            border-radius: 10px;
+            width: 300px;
+            height: 30px;
+            line-height: 30px;
+            text-align: center;
+            cursor: pointer;
+        }
+        p {
+            width: 400px;
+            height: 50px;
+            border: 1px solid;
+            line-height: 50px;
+            padding-left: 10px;
+            display:none;
+        }
+    </style>
+</head>
+<body>
+    <h1>* slideDown() slideUp()</h1>
+    <!-- <p>
+        선택된 요소가 점점 위로 말려올라가면서 사라지고 점점 내려오면서 보여지게 하는 메소드
+    </p>
+
+    <button id="slideUp">slideUp</button>
+    <button id="slideDown">slideDown</button>
+
+    <div id="test1">
+        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Architecto odit ipsum tempore rem velit quibusdam quis repellendus accusantium voluptatum aspernatur, vitae, quidem at. Quae dicta, molestias neque ratione iure id!
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis quidem cupiditate fuga incidunt voluptate ratione autem corporis accusantium expedita molestias, at omnis optio, saepe sequi nemo explicabo. Incidunt, accusamus quos!
+        <img src="../01.html5/resources/img/istockphoto-468900564-2048x2048.jpg" alt="" id="img1"> 
+    </div>
+
+    <div>
+    Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ratione, neque quos totam rem distinctio dicta odio deleniti voluptas unde consequuntur accusantium cupiditate fugit ut? Sunt at eaque optio perferendis aspernatur!
+    </div>
+    <script>
+        $(()=>{
+            $('#slideUp').click(function(){
+                $('#test1').slideUp();
+            })
+            $('#slideDown').click(function(){
+                $('#test1').slideDown();
+            })
+        })
+    </script> -->
+    <hr>
+    <h3>질문에 대한 답 보여주기</h3>
+    <br><br>
+
+    <div id="q1">Q.질문입니다</div>
+    <p id="a1">A.답변입니다</p>
+    <div id="q2">Q.점심시간은 언제 입니까?</div>
+    <p id="a2">A.12시50분 입니다</p>
+    <div id="q3">Q.수업종료시간은?</div>
+    <p id="a3">A.18시40분입니다</p>
+    <div id="q4">Q. 공부 몇시간 합니까?</div>
+    <p id="a4">A.1시간정도 합니다</p>
+
+    <script>
+        // $(()=>{
+        //     $('#q1').click(function(){
+        //         $('#a1').slideToggle();
+        //     })
+        // })
+        // $(()=>{
+        //     $('#q2').click(function(){
+        //         $('#a2').slideToggle();
+        //     })
+        // })
+        // $(()=>{
+        //     $('#q3').click(function(){
+        //         $('#a3').slideToggle();
+        //     })
+        // })
+        // $(()=>{
+        //     $('#q4').click(function(){
+        //         $('#a4').slideToggle();
+        //     })
+        // })
+
+        //선생님 풀이
+        $(()=>{
+            $('div').click(function(){
+                let $p = $(this).next(); // 클릭이된 요소의 다음 형제요소를 변수에 담음
+                if($p.css('display')=='none'){
+                    $p.slideDown();
+                }else{
+                    $p.slideUp();
+
+                }
+            })
+        })
+    </script>
+
+</body>
+</html>

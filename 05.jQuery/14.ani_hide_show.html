@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Effect 메서드</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.13.3/jquery-ui.js"></script>
+    <style>
+        img{
+            width: 500px;
+            height: 400px;
+        }
+    </style>
+</head>
+<body>
+    <h1>시각적인 효과(Effect 메서드)</h1>
+    <p>페이지 내에 애니메이션 효과를 주기 위해 사용되는 메서드</p>
+
+    <h3>* show() hide(), toggle()</h3>
+    <p>선택된 요소가 점점 커지면서 보여지고, 점점 작아지면서 사라지게 되는 메소드</p>
+
+    <button id="hide">숨기기</button>
+    <button id="show">보여주기</button>
+    <button id="toggle">토글</button>
+
+    <br><br>
+
+    <img src="../01.html5/resources/img/istockphoto-468900564-2048x2048.jpg" alt="" id="img1">
+
+    <div id="content">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam velit sapiente a ea aut molestiae amet. Beatae officia accusamus vero quisquam voluptates facilis illum accusantium minima quae. Corrupti, reprehenderit distinctio!
+        Sunt dolorum beatae ea officia cum temporibus repellat dolore autem quas iste magnam asperiores necessitatibus, soluta, itaque aut? Sint eius facilis laboriosam adipisci suscipit est provident dolore sunt nobis deserunt?
+    </div>
+
+    <script>
+        $(()=>{
+            $('#hide').click(function(){
+                $('#img1').hide(10000);
+            })
+            $('#show').click(function(){
+                $('#img1').show(500);
+            })
+            $('#toggle').click(function(){
+                $('#img1').toggle(1000, 'easeOutBounce');
+            })
+        })
+    </script>
+    
+</body>
+</html>
