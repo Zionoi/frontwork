@@ -6,87 +6,211 @@
     <title>Document</title>
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
     <script src="https://code.jquery.com/ui/1.13.3/jquery-ui.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <style>
-          header {
+        body {
             display: flex;
+            justify-content: center;
+            margin: 0;
+        }
+
+        .con {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        header {
+            display: flex;
+            justify-content: center;
+            width: 900px;
             justify-content: space-between; /* 로고와 내비게이션 사이에 공간을 균등하게 배치 */
             align-items: center; /* 로고와 내비게이션을 수직으로 가운데 정렬 */
             padding: 10px;
-            background-color: #f0f0f0;
+            background-color: #ffffff;
             position: relative; /* header를 기준으로 서브메뉴의 절대 위치를 설정하기 위해 relative로 설정 */
             z-index: 10; /* 헤더를 다른 요소 위로 올리기 위해 z-index 설정 */
         }
+        body{
+            
+        }
+
         ul {
             list-style-type: none;
             display: flex;
             padding: 0;
             margin: 0;
         }
+
         li {
             margin-left: 10px; /* li 요소 간의 간격을 조정 */
             position: relative; /* submenu의 위치를 relative로 설정 */
         }
+
+        .li1 {
+            width: 130px;
+            height: 50px;
+            line-height: 50px;
+            font-weight: bold;
+            font-size: large;
+            text-align: center;
+            background-color: #ffffff;
+        }
+
         li a {
             text-decoration: none;
-            background-color: #f5f5dc;
+            background-color: #ffffff;
             display: inline-block;
-            width: 100px;
-            height: 30px;
+            width: 120px;
+            height: 50px;
             color: black;
             text-align: center;
             font: bold 15px Verdana;
             line-height: 30px;
         }
+
         .submenu {
             display: none; /* 기본적으로 하위 메뉴를 숨김 */
             position: absolute; /* 부모 요소를 기준으로 위치 설정 */
             top: 100%; /* 상위 메뉴의 바로 아래에 위치 */
             left: 0;
-            background-color: #f5f5dc;
+            flex-wrap: wrap;
+            background-color: #ffffff;
             list-style: none;
             padding: 0;
             margin: 0;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
             z-index: 20; /* 서브메뉴를 이미지 위로 올리기 위해 z-index 설정 */
         }
+
         .submenu li {
             margin: 0;
         }
+
         .submenu a {
             display: block;
             padding: 10px 20px;
             color: black;
         }
+
         .submenu a:hover {
             background-color: #e0e0e0;
         }
+
         #logo {
-            width: 50px;
-            height: 50px;
+            width: 60px;
+            height: 60px;
         }
+
         #slider {
             position: relative;
-            width: 100%;
+            width: 900px;
             height: 400px; /* 슬라이드 쇼 높이 */
             overflow: hidden;
         }
+
         #slider img {
-            width: 100%;
+            width: 900px;
             height: 100%;
             position: absolute;
             left: 100%;
             transition: left 1s;
+            cursor: pointer;
+
         }
+
         #slider img.active {
             left: 0;
         }
+
         #slider img.prev {
             left: -100%;
         }
-    </style>
+
+        .cDate {
+            display: flex;
+            border: 1px solid;
+            width: 900px;
+            height: 260px;
+        }
+
+        .schedule {
+            width: 50%;
+            padding: 20px;
+            overflow-y: auto;
+        }
+
+        .schedule ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .schedule li {
+            margin-bottom: 5px;
+            font-size: 18px;
+        }
+
+        .photo-gallery {
+            width: 50%;
+            display: flex;
+            flex-wrap: wrap;
+            padding: 0px;
+            overflow-y: auto;
+            margin-left: 30px;
+        }
+
+        .photo-gallery img {
+            width: 120px;
+            height: 110px;
+            margin: 5px;
+            object-fit: cover;
+            cursor: pointer;
+        }
+
+        .cLi {
+            list-style-type: none; /* 리스트 앞의 동그라미 점 없애기 */
+            margin: 0;
+            padding: 0;
+        }
+
+        .cDl {
+            width: 100px; /* 날짜 칸의 너비 줄이기 */
+        }
+
+        table.schedule {
+            width: 50%;
+        }
+
+        table.schedule th, table.schedule td {
+            padding: 5px;
+            text-align: center;
+        }
+
+        table.schedule th {
+            width: 30%; /* 제목 셀의 너비 설정 */
+        }
+
+        table.schedule td {
+            width: 70%; /* 내용 셀의 너비 설정 */
+        }
+        .bImg {
+            display: flex;
+            justify-content: center;
+            flex-wrap: nowrap;
+            width: 900px;
+            overflow: hidden;
+            margin-top: 20px;
+        }
+        .bImgs {
+            flex: 0 0 auto;
+            width: 200px;
+            height: 300px;
+            margin: 0px 20px 0px 20px;
+            cursor: pointer;
+
+        }
     </style>
     <script>
-        $(document).ready(function() {
+        $(() => {
             let currentIndex = 0;
             const images = $('#slider img');
             const imageCount = images.length;
@@ -119,61 +243,131 @@
             setInterval(showNextImage, 3000); // 3초마다 다음 이미지로 슬라이드
 
             // 메뉴 클릭 시 서브메뉴 슬라이드 애니메이션
-            $('.nav > li').hover(
-                function() {
+            $('.li1').hover(
+                function () {
                     $(this).find('.submenu').stop(true, true).slideDown(300); // 마우스 오버 시 슬라이드 다운
                 },
-                function() {
+                function () {
                     $(this).find('.submenu').stop(true, true).slideUp(300); // 마우스 아웃 시 슬라이드 업
                 }
             );
+            // 이미지 클릭 시 새 창 열기
+            $('.photo-gallery img, .bImgs, #img1, #img2, #img3').click(function() {
+                const src = $(this).attr('src');
+                window.open(src, '_blank', 'width=800,height=600,top=200,left=200');
+            });
         });
     </script>
 </head>
 <body>
-    
-        <header>
-            <div>
-                <img src="../02.CSS3/resources/img/istockphoto-2095208020-2048x2048.jpg" alt="로고" id="logo">
-
-            </div>
-            <nav>
+    <div class="con">
+    <header>
+        <div>
+            <img src="resources/img/istockphoto-2095208020-2048x2048.jpg" alt="로고" id="logo">
+        </div>
+        <h2 style="margin-right: 300px; font-size: 25px;">WICKED</h2>
+        <nav>
                 <ul class="nav">
-                    <li><a href="">여행가이드 소개</a></li>
-                    <li>국내여행지
+                    <li class="li1">밴드 소개
                         <ul class="submenu">
-                            <li><a href="">강원도</a></li>
-                            <li><a href="">충청도</a></li>
-                            <li><a href="">경상도</a></li>
-                            <li><a href="">전라도</a></li>
+                            <li><a href="">멤버소개</a></li>
+                            <li><a href="">밴드이야기</a></li>
                         </ul>
                     </li>
-                    <li>해외여행지
+                    <li class="li1">음악 및 앨범
                         <ul class="submenu">
-                            <li><a href="">캐나다</a></li>
-                            <li><a href="">유럽</a></li>
-                            <li><a href="">호주</a></li>
-                            <li><a href="">홍콩</a></li>
+                            <li><a href="">앨범</a></li>
+                            <li><a href="">싱글</a></li>
+                            <li><a href="">뮤직비디오</a></li>
+                        </ul>
+                    </li>
+                    <li class="li1">스토어
+                        <ul class="submenu">
+                            <li><a href="">굿즈</a></li>
+                            <li><a href="">앨범</a></li>
                         </ul>
                     </li>
                 </ul>
             </nav>
         </header>
-    <div id="slider">
-        <img src="../02.CSS3/resources/img/스테이크.jpg" id="img1" class="active">
-        <img src="../02.CSS3/resources/img/삼겹살.jpg" id="img2">
-        <img src="../02.CSS3/resources/img/치킨.jpg" id="img3">
+        <div id="slider">
+            <img src="resources/img/KakaoTalk_20240712_154912481.jpg" id="img1" class="active">
+            <img src="resources/img/KakaoTalk_20240712_160631638.jpg" id="img2">
+            <img src="resources/img/KakaoTalk_20240712_154912481_09.jpg" id="img3">
+        </div>
+        <h1>공연일정</h1>
+        <div class="cDate">
+            <div class="cDate">
+                <table class="table table-striped table-hover schedule">
+                    <tr>
+                        <th style="width: 70%; font-size: large;">공연</th>
+                        <th style="width: 30%; font-size: large;">날짜</th>
+                    </tr>
+                    <tr>
+                        <td>
+                            <li class="cLi">역삼 엠플라운지 밴드페스티벌</li>
+                        </td>
+                        <td>
+                            <li class="cLi cDl">2024-07-20:</li>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <li class="cLi">공연B</li>
+                        </td>
+                        <td>
+                            <li class="cLi cDl">2024-09-20:</li>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <li class="cLi">공연C</li>
+                        </td>
+                        <td>
+                            <li class="cLi cDl">2024-10-20:</li>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <li class="cLi">공연D</li>
+                        </td>
+                        <td>
+                            <li class="cLi cDl">2024-11-20:</li>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <li class="cLi">공연E</li>
+                        </td>
+                        <td>
+                            <li class="cLi cDl">2024-12-31:</li>
+                        </td>
+                    </tr>
+                </table>
+                <div class="photo-gallery">
+                    <img src="resources/img/KakaoTalk_20240712_154912481_01.jpg" alt="">
+                    <img src="resources/img/KakaoTalk_20240712_154912481_04.jpg" alt="">
+                    <img src="resources/img/KakaoTalk_20240712_154912481_08.jpg" alt="">
+                    <img src="resources/img/KakaoTalk_20240712_155023124.jpg" alt="">
+                    <img src="resources/img/KakaoTalk_20240712_155133543.jpg" alt="">
+                    <img src="resources/img/KakaoTalk_20240712_155133543_01.jpg" alt="">
+                </div>
+            </div>
+        </div>
+
+        <div class="bImg">
+            <img class="bImgs" src="resources/img/KakaoTalk_20240712_154912481_06.jpg" alt="스테이크">
+            <img class="bImgs" src="resources/img/KakaoTalk_20240712_154912481_10.jpg" alt="삼겹살">
+            <img class="bImgs" src="resources/img/KakaoTalk_20240712_160631638_01.jpg" alt="치킨">
+        </div>
+        <hr style="width: 900px;">
+        <div style="border: 1px solid; margin-top: 10px; width: 900px;">
+        공연문의<br>        
+        밴드 wicked <br>
+        전화번호 010-1234-5678
+
+
+        </div>
     </div>
-
-
-
-    <div style="border: 1px; width: 400px; height: 400px;"></div>
-    <div></div>
-    
-    <img src="" alt="" id="img4">
-    <img src="" alt="" id="img5">
-    <img src="" alt="" id="img6">
-
-    <div></div>
 </body>
 </html>
